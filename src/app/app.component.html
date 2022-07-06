@@ -1,0 +1,27 @@
+<!--==== One Way Binding ===-->
+<router-outlet></router-outlet>
+<h1>{{ title }}</h1>
+<p>{{ description }}</p>
+<h3>{{ isClassEnded }}</h3>
+<h3>{{ numberOfStudents }}</h3>
+<h1>{{  name }}</h1>
+<h4>{{ color }}</h4>
+<h2>{{ age }}</h2>
+
+<!---=== Two Way Binding ===-->
+
+<input type="text" [(ngModel)]="username" placeholder="Enter a user name">
+<h2>{{ username || 'No User name'}}</h2>
+
+<!--=== Structural Directives ===-->
+
+<h3>Food Menus</h3>
+<br>
+<button (click)="toggleMenu()">Show Menu</button>
+
+<ul *ngIf="showMenu === true">
+  <li *ngFor="let dish of dishes;">{{ dish}}</li> 
+</ul>
+
+<!--=== Create todos component and todo component ===-->
+<app-todos></app-todos>
